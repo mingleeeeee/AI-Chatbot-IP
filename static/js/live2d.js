@@ -25,7 +25,7 @@ var currentModel;
   });
 
   // 3, 背景画像をロードして追加する
-  const backgroundTexture = Texture.from('static/school.jpeg'); // Replace with the path to your background image
+  const backgroundTexture = Texture.from('static/img/school.jpeg'); // Replace with the path to your background image
   const backgroundSprite = new Sprite(backgroundTexture);
   backgroundSprite.width = window.innerWidth;
   backgroundSprite.height = window.innerHeight;

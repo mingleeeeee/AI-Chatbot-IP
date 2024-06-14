@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template
 from flask_cors import CORS
 from openai import OpenAI
 from datetime import datetime
@@ -8,23 +8,26 @@ import json
 import librosa
 from python_speech_features import mfcc
 from dotenv import load_dotenv
-load_dotenv() 
-app = Flask(__name__, static_folder='static')
+
+load_dotenv()  # Load environment variables from .env file
+
+app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app)  # Enable CORS for all routes of the Flask app
 
 # Define the directory for storing audio files
-AUDIO_DIR = os.path.join(app.root_path, 'audio')
+AUDIO_DIR = os.path.join(app.static_folder, 'audio')
 ASSETS_DIR = os.path.join(app.root_path, 'assets')
 
 # Retrieve the API key from the environment variable
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("No OpenAI API key found. Please set the OPENAI_API_KEY environment variable.")
+
 client = OpenAI(api_key=api_key)
 
 @app.route('/')
-def static_file():
-    return app.send_static_file('index.html')
+def index():
+    return render_template('index.html')
 
 @app.route('/audio/<path:filename>')
 def serve_audio(filename):
@@ -38,7 +41,7 @@ def serve_assets(path):
 def role_play():
     data = request.get_json()
     prompt = data['prompt']
-    personality = data['personality']
+    personality = data.get('personality', "一人称が「ちいかわ」で、口癖は「○○…ってこと！？」「泣いちゃった」等。語尾に「コト！？」を付けるだけで大丈夫です。その後に、「これってさぁ、絶対○○じゃん！」が続くこともよくあります。")
 
     try:
         # Use OpenAI's Completion API to generate a text response based on the prompt
@@ -83,29 +86,21 @@ def role_play():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-
 def analyze_audio(audio_path):
     # Load the audio signal
     y, sr = librosa.load(audio_path, sr=8000)
-
     # Apply pre-emphasis
     y = np.append(y[0], y[1:] - 0.97 * y[:-1])
-
     # Extract MFCC features
     mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)
-
     # Normalize MFCC features
     mfcc_norm = (mfcc - np.mean(mfcc)) / np.std(mfcc)
-
     # Convert MFCC to energy
     energy = np.sum(mfcc_norm, axis=0)
-
     # Normalize the energy values between 0 and 1
     normalized_energy = (energy - np.min(energy)) / (np.max(energy) - np.min(energy))
-
     # Scale the normalized energy values
     mouth_openness = normalized_energy * 1.2  # Adjust the scaling factor as needed
-
     # Clip the values to ensure they don't exceed 1
     mouth_openness = np.clip(mouth_openness, 0, 1)
 
