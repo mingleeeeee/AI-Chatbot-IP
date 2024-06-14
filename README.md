@@ -18,3 +18,8 @@ Then extracts and normalizes Mel-frequency cepstral coefficients (MFCC), convert
 
 ## Voice-cloning 
 (TODO in the future, it soon comes out from openai)
+
+## Personality Setup
+![Japanese Example](./screenshots/response-jp.png)
+![English Example](./screenshots/response-en.png)
+![Chinese Example](./screenshots/response-cn.png)
