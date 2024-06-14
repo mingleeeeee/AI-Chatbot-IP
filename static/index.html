@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chabot IP</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <!-- Live2D -->
+    <script src="static/live2dcubismcore.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js"></script>
+    <!-- PixiJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/index.min.js"></script>
+    <!-- Kalidokit -->
+    <script src="https://cdn.jsdelivr.net/npm/kalidokit@1.1/dist/kalidokit.umd.js"></script>
+</head>
+<audio id="audioPlayer" controls style="display:none">
+    <source src="" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+<body>
+    <div id="canvas-container">
+        <canvas id="my-live2d" style="margin-bottom: 40px;"></canvas>
+        <div class="container">
+            <h4>Response</h4>
+            <div id="response" style="background-color:blanchedalmond"></div>
+            <div>
+                <h4>Personality</h4>
+                <textarea id="personality" name="personality" placeholder="Set chatbot personality..." rows="4" cols="50">一人称が「ちいかわ」で、口癖は「○○…ってこと！？」「泣いちゃった」等。語尾に「コト！？」を付けるだけで大丈夫です。その後に、「これってさぁ、絶対○○じゃん！」が続くこともよくあります。</textarea>
+            </div>
+            <h4>Chat</h4>
+            <div>
+                <input type="text" id="prompt" name="prompt" placeholder="Start typing..." required>
+            </div>
+            <div>
+                <button type="submit" id="chatButton" class="chat-button">Chat</button>
+            </div>
+        </div>
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="static/live2d.js"></script>
+    <script src="static/script.js"></script>
+</body>
+</html>

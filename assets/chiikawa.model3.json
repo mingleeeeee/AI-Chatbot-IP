@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "chiikawa.moc3",
+		"Textures": [
+			"chiikawa.8192/texture_00.png"
+		],
+		"Physics": "chiikawa.physics3.json",
+		"DisplayInfo": "chiikawa.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

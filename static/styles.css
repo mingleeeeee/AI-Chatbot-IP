@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: blanchedalmond; /* Background color set to black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  #canvas-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the content vertically */
+    background-color: blanchedalmond;
+  }
+  canvas{
+    background-color: blanchedalmond;
+  }
+  
+  #my-live2d {
+    width: 100%; /* Make sure the canvas takes the full width of the container */
+    height: 300px; /* Maintain aspect ratio */
+    margin-bottom: 0; /* Remove space between the Live2D model and the text boxes */
+    
+  }
+  
+  #word-below-model {
+    color: white;
+    margin: 5px 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .container {
+    text-align: center;
+    margin-top: -50px; /* Reduce space between canvas and container */
+  }
+  
+  h1 {
+    color: white;
+    margin: 0;
+    padding: 10px 0; /* Reduce padding for tighter layout */
+  }
+  
+  #response {
+    margin: 0;
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  #prompt {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+  }
+  
+  #chatButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  /* Default button style */
+  .chat-button {
+      background-color: #007bff; /* Bootstrap primary blue */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+  
+  /* Disabled button style */
+  .chat-button[disabled] {
+      background-color: #b8daff !important; /* Lighter blue */
+      cursor: not-allowed;
+      color: #212529; /* Dark text color for better contrast */
+  }
+
+  
