@@ -7,9 +7,9 @@ This app is developed with a python flask server.
 Live2D(https://www.live2d.com/en/) is the industry standard tool for 2D real-time expression, chosen by professional creators around the world. Live2D Cubism provides a framework for creating interactive, animated 2D models, and their SDKs support integration with web technologies, including JavaScript.
 
 ## OpenAI API models
-- gpt-4o
+- gpt-4o <br>
 For text-based chat module. The fastest model provided by openai currently.
-- tts-1 
+- tts-1 <br>
 For text to speech module. It supports 30+ languages and decent accent and tone, but its response speed is a bit slow.
 
 ## Lipsync (Still looking for better solution)
