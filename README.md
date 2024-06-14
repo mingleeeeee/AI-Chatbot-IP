@@ -20,6 +20,9 @@ Then extracts and normalizes Mel-frequency cepstral coefficients (MFCC), convert
 (TODO in the future, it soon comes out from openai)
 
 ## Personality Setup
-![Japanese Example](./screenshots/response-jp.png)
-![English Example](./screenshots/response-en.png)
-![Chinese Example](./screenshots/response-cn.png)
+- Japanese Example
+<img src="./screenshots/response-jp.png" alt="drawing" width="200"/>
+- English Example
+<img src="./screenshots/response-en.png" alt="drawing" width="200"/>
+- Chinese Example
+<img src="./screenshots/response-cn.png" alt="drawing" width="200"/>
