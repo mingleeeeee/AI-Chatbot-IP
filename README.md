@@ -21,8 +21,8 @@ Then extracts and normalizes Mel-frequency cepstral coefficients (MFCC), convert
 
 ## Personality Setup
 - Japanese Example
-<img src="./screenshots/response-jp.png" alt="drawing" width="200"/>
+<img src="./screenshots/response-jp.png" alt="drawing" width="400"/>
 - English Example
-<img src="./screenshots/response-en.png" alt="drawing" width="200"/>
+<img src="./screenshots/response-en.png" alt="drawing" width="400"/>
 - Chinese Example
-<img src="./screenshots/response-cn.png" alt="drawing" width="200"/>
+<img src="./screenshots/response-cn.png" alt="drawing" width="400"/>
