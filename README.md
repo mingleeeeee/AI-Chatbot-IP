@@ -17,4 +17,4 @@ Utilizing librosa to load the audio signal and applies pre-emphasis to enhance h
 Then extracts and normalizes Mel-frequency cepstral coefficients (MFCC), converts these coefficients to an energy representation, normalizes and scales the energy values to estimate mouth openness, ensuring the final values are clipped between 0 and 1.
 
 ## Voice-cloning 
-(TODO in the future, soon comes out from openai)
+(TODO in the future, it soon comes out from openai)
